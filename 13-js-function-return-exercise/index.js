@@ -5,6 +5,11 @@
  * and return "Hello 'your_name'!"
  */
 
+ function greet(your_name){ 
+
+return "Hello "+ your_name + "!";
+ }
+
 /**
  * Exercise 2
  *
@@ -13,12 +18,27 @@
  * if the age is less than 18
  */
 
+ function loginValidation(age){
+if (age>=18){
+    return "Welcome!";    
+}
+else {
+    return "Sorry, not allowed.";
+    
+}
+ }
+
 /**
  * Exercise 3
  *
  * Create a function `minNumber` which takes 2 numbers as params
  * and return the least one.
  */
+
+function minNumber(a, b){
+
+return b;
+}
 
 /**
  * Exercise 4
@@ -27,9 +47,19 @@
  * 1 and 10, fraction should be rounded to lower integer
  */
 
+ function randomNumber(){
+
+    return Math.floor(Math.random() * 10);
+ }
+
 /**
  * Exercise 5
  *
  * Create a function `getOppositeNumber` that takes a number as a param and
  * returns an opposite number
  */
+
+ function getOppositeNumber(a){
+
+    return a*(-1);
+ }
