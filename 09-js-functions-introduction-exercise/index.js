@@ -59,7 +59,7 @@ console.error("My favorite animal is Cat");
  */
 
  function myCity(){
-     let YOUR_CITY;
-    alert("My favorite cat is " + YOUR_CITY); 
- }
-myCity();
+
+ alert ("My favorite cat is ");
+
+}  

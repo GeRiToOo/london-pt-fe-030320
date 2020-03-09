@@ -30,9 +30,10 @@ console.log("My favorite animal is " + myFavoriteAnimal);
  */
 function myAnimalWithWarn() {
     
-    console.warn("My favorite animal is " + myFavoriteAnimal);
+    global.console.warn("My favorite animal is " + myFavoriteAnimal);
 
 }
+myAnimalWithWarn();
 
 /**
  * Exercise 4
@@ -58,17 +59,18 @@ console.error("My favorite animal is Cat");
  */
 
  function myCity(){
-     let myCity = "plovdiv";
-    alert("My favorite cat is " + myCity); 
-    
 
- }
+ alert ("My favorite cat is ");
 
+}  
 global.console = {
 	log: jest.fn(),
 	info: jest.fn(),
-	error: jest.fn()
+	error: jest.fn(),
+	warn: jest.fn()
+  
 };
+global.alert= jest.fn();
 
 // Exercise 1
 describe("myFavoriteAnimal", () => {
