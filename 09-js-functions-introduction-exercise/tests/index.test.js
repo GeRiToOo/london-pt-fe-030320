@@ -58,19 +58,18 @@ console.error("My favorite animal is Cat");
  *
  */
 
- function myCity(){
+ function myCity(YOUR_CITY){
+     
+    alert("My favorite cat is " + YOUR_CITY); 
+ }
 
- alert ("My favorite cat is ");
-
-}  
 global.console = {
 	log: jest.fn(),
 	info: jest.fn(),
 	error: jest.fn(),
-	warn: jest.fn()
-  
+	warn: jest.fn(),
+	alert: jest.fn()
 };
-global.alert= jest.fn();
 
 // Exercise 1
 describe("myFavoriteAnimal", () => {

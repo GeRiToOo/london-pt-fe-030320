@@ -60,6 +60,6 @@ console.error("My favorite animal is Cat");
 
  function myCity(){
 
- alert ("My favorite cat is ");
+ alert ("My favorite cat is" + YOUR_CITY);
 
 }  
