@@ -1,73 +1,515 @@
 * {
     box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 body {
     font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+
 }
 
-/* Custom styles */
-@keyframes back_glow_pink {
-    0% { transform: translate(10%, 10%) scale(0.8); }
-    50% { transform: translate(-15%, -15%) scale(1.2); }
-    100% { transform: translate(10%, 10%) scale(0.8); }
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* remove extra space below image */
 }
 
-@keyframes back_glow_blue {
-    0% { transform: translate(-10%, -10%) scale(0.8); }
-    50% { transform: translate(15%, 15%) scale(1.2); }
-    100% { transform: translate(-10%, -10%) scale(0.8); }
-}
 
-.content_area {
+h1 {
+    font-size: 4em;
+    font-weight: bolder;
+    
+  }
+  
+  h2 {
+    font-size: 4em;
+    line-height: 1.4em;
+  }
+  
+  h3 {
+    font-size: 2em;
+   
+  }
+  
+  h4 {
+    font-size: 2em;
+   
+  }
+  
+  h5 {
+    font-size: 1em;
+    
+  }
+  
+  h6 {
+    font-size: 0.5em;
+
+  }
+
+
+/* <<<< = = = NAVIGATION  = = = >>>>> */
+
+  main {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    background-image: url("/Users/gerganarangelova/london-pt-fe-030320/17-html-css-basics-2-exercise/images/wave-1817646_1920.png");
+  }
+
+.container {
+    height: 130vh;
     width: 100vw;
-    height: 100vh;
+   
+}
+
+main nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2cm;
+    overflow: auto;
+    position: relative;
+    z-index: 20;
+  }
+  
+ 
+main nav .nav_list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: right;
+  }
+  
+
+  
+  main nav .nav_list li {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1.4em;
+    font-weight: bold;
+    margin: 1em;
+    color: white;
+  }
+  
+  main nav .nav_list li:last-child {
+    margin-right: 0;
+  }
+  
+  main nav .nav_list li a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1em 0;
+    transition: 0.2s;
+  }
+  
+  main nav .nav_list li a:hover {
+    color: #edf0f1;
+  }
+
+main .content {
+    color: white;
+    letter-spacing: 0.1em;
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    transform: translate(0, -50%);
+    max-width: 50vw;
+}
+
+ /* <<<<<< = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = >>>> */
+
+ /* <<< = = = = = = = = = = = = = W H Y H T M L = = = = = = = = = = >>>> */
+
+ .whyHTML {   
+     margin-top: 5cm;
+     padding: 0cm;
+     height: 400px;
+     width: 100%;  
+ }
+
+ .whyHTML .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+ }
+
+ .container .filter {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    height: 300px;
+    width: 300px;
+    font-weight: bolder;
+    font-size: 5em;
+    position: relative;
+    background-size: 100%;
+    margin-left: 5cm;
+  }
+  
+
+  .container .filter::before {
+    content: "";
+    filter: brightness(0.2);
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: url("/Users/gerganarangelova/london-pt-fe-030320/17-html-css-basics-2-exercise/images/codes-coding-css-1921326.jpg") no-repeat center center;
+    
+  }
+
+  .filter p {
+    position: relative;
+    font-weight: 200;
+    text-align: center;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    color: transparent;
+  }
+
+ .whyHTML .container .details h3 {
+    font-size: 2.5em;
+    color: rgb(245, 86, 86);
+
+  }
+  .whyHTML .container .details  p {
+    width: 300px;
+    height: 300px;
+    font-size: 1.2em;
+    text-align: justify;
+    margin-right: 5cm;
+    line-height: 1.4em;
+ }
+
+/* <<<<< = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = >>>> */
+
+/* <<< = = = = = = = = = = =  = = = W H Y C S S = = = = = = = = = = >>>> */
+
+ .whyCSS { 
+  margin: 0 0 3cm 0;
+  padding: 0cm;
+  height: 400px;
+  width: 100%;   
+}
+
+.whyCSS .container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+.container .filter {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: #000;
+   height: 300px;
+   width: 300px;
+   font-weight: bolder;
+   font-size: 5em;
+   position: relative;
+   background-size: 100%;
+   margin-right: 5cm;
+ }
+ 
+ .container .filter::before {
+   content: "";
+   filter: brightness(0.2);
+   display: block;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   background: url("/Users/gerganarangelova/london-pt-fe-030320/17-html-css-basics-2-exercise/images/codes-coding-css-1921326.jpg") no-repeat center center; 
+ }
+
+ .filter p {
+   position: relative;
+   font-weight: 200;
+   text-align: center;
+   background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+   color: transparent;
+ }
+
+.whyCSS .container .details h3 {
+   font-size: 2.5em;
+   color: rgb(5, 168, 5);
+   margin-left: 5cm;
+
+ }
+ .whyCSS .container .details  p {
+   width: 300px;
+   height: 300px;
+   font-size: 1.2em;
+   text-align: justify;
+   margin-left: 5cm;
+   line-height: 1.4em;
+
 }
 
-.content_area__logo {
-    position: relative;
-    width: 150px;
+/* <<<<< = = = = = = = = = == = = = = = = = = = = = = = = = = = = = >>>> */
+
+/* <<< = = = = = = = = = = =  = = = C A R D S = = = = = = = = = = >>>> */
+
+.cards {
+    background-color: rgb(247, 242, 242);
+    margin-top: 3cm;
+    height: 600px;
+  width: 100%;
+}
+
+.cards .container {
+display: flex;
+flex-direction: column;
+}
+
+.cards .container .title {
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: 2cm 0 0cm 0;
+}
+
+.cards .container .title h2 {
+    margin-bottom: 0;
+    font-size: 2.3em;
+}
+
+.cards .container .title h4 {
+    margin-top: 0;
+    color: grey;
+    font-size: 1em;
+   }
+
+
+.cards .container .card_holder {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0.5cm 8cm 0 8cm;;
+}
+
+.cards .container .card_holder .card {
+display: flex;
+flex-direction: column;
+/* align-items: center; */
+width: 200px;
+height: 300px;
+background-color: rgb(255, 255, 255);
+padding: 0.3cm;
+box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.cards .container .card_holder .card img {
+    width: 200px;
     height: 150px;
 }
 
-.content_area__logo img {
-    border-radius: 15px;
-    display: block;
-    left: 0;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    width: 150px;
-    z-index: 3;
+.cards .container .card_holder .card p {
+width: 150px;
+height: 50px;
+font-size: 1em;
+margin-top: 0;
+line-height: 1.4em;
 }
 
+.cards .container .card_holder .card h4 {
+    font-size: 1.3em;
+    font-style: bolder;
+    margin-bottom: 0.2cm;
+}
+/* <<<<< = = = = = = = = = == = = = = = = = = = = = = = = = = = = = >>>> */
 
-.content_area__logo:before,
-.content_area__logo:after {
-    border-radius: 15px;
-    content: "";
-    filter: blur(40px);
-    height: 100%;
-    opacity: 0.5;
-    position: absolute;
+/* <<< = = = = = = = = = = = = = = P I C T U R E S = = = = = = = = = = >>>> */
+
+.pictures {
+    margin-top: 0;
+    height: 780px;
     width: 100%;
 }
 
-.content_area__logo::after {
-    animation: back_glow_blue 3s ease infinite;
-    background-color: #0ff;
-    z-index: 1;
+.pictures .container {
+display: flex;
+flex-direction: column;
+
 }
 
-.content_area__logo::before {
-    animation: back_glow_pink 3s ease infinite;
-    background-color: #a622ff;
-    z-index: 2;
+.pictures .container .title {
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: 2cm 0 0cm 0;
 }
 
-/* ======================== */
+.pictures .container .title h2 {
+    margin-bottom: 0;
+    font-style: bold;
+    font-size: 2.3em;
+    letter-spacing: 0.06em;
+}
+
+.pictures .container .title h4 {
+    margin-top: 0;
+    color: grey;
+    font-size: 1.2em;
+   }
+
+
+  .picture_container {
+    width: 75%;
+    height: 500px;
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    align-self: center;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+    
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    -ms-flex: 33%; /* IE10 */
+    flex: 33%;
+    max-width: 33%;
+    padding: 0 4px;
+    position: relative;
+  }
+
+  .item{
+     display: inline-block;
+     position: relative;
+  }
+  
+  .item img {
+    margin-top: 8px;
+    padding: 8px;
+    vertical-align: center;
+    text-align: center;
+    width: 100%;
+    transition: .2s;
+   
+  }
+.item :not(img){
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+      color:white;
+      text-align: center;
+      width: 100%;
+      opacity: 0;
+      transition: .3s;
+  }
+ 
+ .item img:hover {
+      filter: brightness(80%);
+  }
+  .item h3 {
+      font-weight: bolder;
+      top:30%; 
+  }
+  .column .item:hover :not(img){
+    opacity: 1;
+    
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
+
+/* <<<<< = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = >>>> */
+
+/* <<< = = = = = = = = = = = = = = F O O T E R = = = = = = = = = = >>>> */
+
+  hr { 
+   margin-bottom: 0;
+   border: none;
+   height: 5px; 
+  }
+
+  hr.rainbow{
+	background-image: -webkit-linear-gradient(left, rgba(255,2,5,.5), rgba(137,11,138,.5), rgba(27,123,187,.5), rgba(47,195,44,.5), rgba(253,201,1,.5), rgba(255,91,2,.5), #ccc 45%, #ccc 55%, rgba(255,91,2,.5), rgba(253,201,1,.5), rgba(47,195,44,.5), rgba(27,123,187,.5), rgba(137,11,138,.5), rgba(255,2,5,.5));
+	background-image: -moz-linear-gradient(left, rgba(255,2,5,.5), rgba(137,11,138,.5), rgba(27,123,187,.5), rgba(47,195,44,.5), rgba(253,201,1,.5), rgba(255,91,2,.5), #ccc 45%, #ccc 55%, rgba(255,91,2,.5), rgba(253,201,1,.5), rgba(47,195,44,.5), rgba(27,123,187,.5), rgba(137,11,138,.5), rgba(255,2,5,.5)); 
+	background-image: -ms-linear-gradient(left, rgba(255,2,5,.5), rgba(137,11,138,.5), rgba(27,123,187,.5), rgba(47,195,44,.5), rgba(253,201,1,.5), rgba(255,91,2,.5), #ccc 45%, #ccc 55%, rgba(255,91,2,.5), rgba(253,201,1,.5), rgba(47,195,44,.5), rgba(27,123,187,.5), rgba(137,11,138,.5), rgba(255,2,5,.5));
+	background-image: -o-linear-gradient(left, rgba(255,2,5,.5), rgba(137,11,138,.5), rgba(27,123,187,.5), rgba(47,195,44,.5), rgba(253,201,1,.5), rgba(255,91,2,.5), #ccc 45%, #ccc 55%, rgba(255,91,2,.5), rgba(253,201,1,.5), rgba(47,195,44,.5), rgba(27,123,187,.5), rgba(137,11,138,.5), rgba(255,2,5,.5));
+} 
+
+
+  footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 250px;
+    margin: 0;
+}
+
+
+
+.contact_us {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 1cm;
+    
+}
+
+.nav h3 {
+    margin: 0 0 1cm 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+.nav {
+    top: 10%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    width: 400px;
+    height: 150px;
+    
+}
+
+.bar{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav .bar .pic{
+width: 40px;
+height: 40px;
+margin: 0 20px 0 0;
+
+}
+
+.text{
+   top:10%;
+    display: flex;
+    width: 350px;
+     height: 150px;
+     text-align: justify;
+     line-height: 1.4em;
+    
+}
+.text p {
+    margin-top: 0;
+    line-height: 1.5em;
+}
