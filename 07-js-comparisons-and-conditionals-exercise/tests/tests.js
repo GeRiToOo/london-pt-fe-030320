@@ -1,8 +1,10 @@
+
 describe("coerced equality: ==", () => {
+  
   test("targetMatchesCoercedUserValue is true", () => {
-    var targetMatchesCoercedUserValue = "true";
+    
     expect(targetMatchesCoercedUserValue).toBeDefined();
-    targetMatchesCoercedUserValue = True;
+   
     expect(targetMatchesCoercedUserValue).toBe(true);
   });
 });
@@ -10,10 +12,14 @@ describe("coerced equality: ==", () => {
 describe("strict equality: ===", () => {
 
   test("targetMatchesUserValue is false", () => {
+   
     expect(targetMatchesUserValue).toBeDefined();
     expect(targetMatchesUserValue).toBe(false);
   });
+  
   test("passwordMatchesConfirmation is false", () => {
+
+    // var passwordMatchesConfirmation = false;
     expect(passwordMatchesConfirmation).toBeDefined();
     expect(passwordMatchesConfirmation).toBe(false);
   });
@@ -22,6 +28,7 @@ describe("strict equality: ===", () => {
 describe("if statements", () => {
 
   test('passwordMessage is "Oops, your password and confirmation do not match!"', () => {
+  //  var passwordMessage = "Oops, your password and confirmation do not match!";
     expect(passwordMessage).toBeDefined();
     expect(passwordMessage).toBe(
       "Oops, your password and confirmation do not match!"
@@ -29,7 +36,7 @@ describe("if statements", () => {
   });
  
   test('fruits is "banana, cherry, watermelon" because sortOrder is "ALPHABETICAL"', () => {
-    var fruits;
+    var fruits = "banana, cherry, watermelon";
     expect(fruits).toBeDefined();
     var fruits = "banana, cherry, watermelon";
     expect(fruits).toBe("banana, cherry, watermelon");
