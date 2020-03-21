@@ -28,7 +28,7 @@ describe("strict equality: ===", () => {
 describe("if statements", () => {
 
   test('passwordMessage is "Oops, your password and confirmation do not match!"', () => {
-  //  var passwordMessage = "Oops, your password and confirmation do not match!";
+  
     expect(passwordMessage).toBeDefined();
     expect(passwordMessage).toBe(
       "Oops, your password and confirmation do not match!"
