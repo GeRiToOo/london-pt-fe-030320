@@ -95,7 +95,7 @@ let hasSeven = numbers.includes(7);
 let moreThanFour=numbers.find(function(number) {
     return number > numbers[3];
   });
-  console.log(moreThanFour);
+  
   
  
 
@@ -110,4 +110,4 @@ let moreThanFour=numbers.find(function(number) {
  let moreThanSevenIndex=numbers.find(function(number) {
     return number > numbers[5];
   });
-  console.log(moreThanSevenIndex);
+ 
