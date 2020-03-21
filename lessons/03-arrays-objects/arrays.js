@@ -112,7 +112,7 @@ const aFunction = someFunctions[0];
 console.log(aFunction);
 aFunction();
 
-// names.shift();
+// names.shift(); add element
 // names.unshift("joe");
 // names.push("joe");
 // names.pop();

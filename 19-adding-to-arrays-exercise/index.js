@@ -2,7 +2,8 @@
  * create an array "animals" with "cat"
  */
 
-/**
+ let animals = ["cat"];
+ /**
  * Exercise 1
  *
  * add a "dog" to the end of your 'animals'
@@ -10,6 +11,8 @@
  * PS: console.log() the result to see the difference
  */
 
+ animals.push("dog");
+console.log(animals);
 
 /**
  * Exercise 2
@@ -19,7 +22,8 @@
  * PS: console.log() the result to see the difference
  */
 
-
+animals.unshift("rabbit");
+console.log(animals);
 /**
  * Exercise 3
  *
@@ -27,15 +31,20 @@
  * 
  * PS: console.log() the result to see the difference
  */
-
+animals.fill("puma",1,2);
+console.log(animals);
 
 /**
  * create an array "wildAnimals" with "lion"
  */
 
+ let wildAnimals = ["lion"];
+
 /**
  * create an array "wildAnimals" with "giraffe" and "elephant"
  */
+
+ let moreWildAnimals = ["giraffe","elephant"];
 
 /**
  * Exercise 4
@@ -45,3 +54,6 @@
  * 
  * PS: console.log() the result to see the difference
  */
+
+ let combinedWildAnimals= wildAnimals.concat(moreWildAnimals);
+ console.log(combinedWildAnimals);
