@@ -7,6 +7,14 @@
  * PS: use console.log() to see the result
  */
 
+ const user = {
+     firstName: "Gergana",
+     lastName: "Rangelova",
+     age:30
+ }
+
+
+
 /**
  * Exercise 2
  *
@@ -15,6 +23,21 @@
  *
  * PS: use console.log() to see the result
  */
+const allTypes = {
+    string: "string",
+    number: 6,
+    array: ["hey", "bay", "zmay"],
+    object: {
+        name:"gergana",
+        surname:"rangelova"
+    },
+    displayInfo : function(){ 
+        console.log("Hello"); 
+    } ,
+    boolean: false
+
+};
+console.log(allTypes);
 
 /**
  * Exercise 3
@@ -25,3 +48,16 @@
  *
  * PS: use console.log() to see the result
  */
+
+
+
+
+ function createMovieObject(name, rating, ticketPrice){
+
+    const myFavoriteMovie = {name, rating, ticketPrice}; 
+
+    return myFavoriteMovie;
+
+
+ }
+ 

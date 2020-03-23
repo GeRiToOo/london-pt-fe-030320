@@ -38,7 +38,7 @@ let dogIndex = animals.indexOf("dog");
  * Exercise 5
  *
  * create a pandaIndex variable and by using "indexOf" JS method
- * find dog index in "animals" array
+ * find panda index in "animals" array
  */
 
 let pandaIndex = animals.indexOf("dog");
@@ -102,8 +102,8 @@ let moreThanFour=numbers.find(function(number) {
 /**
  * Exercise 11
  *
- * Create variable "moreThanSevenIndex" returns first number
- * "numbers" that are more than 7
+ * Create variable "moreThanSevenIndex" returns index of the first 
+ * number form "numbers" that are more than 7
  */
 
 

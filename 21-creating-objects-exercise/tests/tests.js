@@ -88,6 +88,7 @@ describe("createMovieObject", () => {
 
 	test("createMovieObject return object with property ticketPrice", () => {
 		const myFavoriteMovie = createMovieObject("Home Alone", 8.5, 20);
+		console.log(myFavoriteMovie.ticketPrice);
 		expect(myFavoriteMovie.ticketPrice).toEqual(20);
 	});
 });
