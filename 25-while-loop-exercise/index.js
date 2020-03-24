@@ -10,7 +10,13 @@ let count = 10; // DO NOT TOUCH THIS LINE :)
  */
 
 // ==========================
-
+function countdown() {
+    while (count > 0) {
+    console.log(`Remaining: ${count}`);
+    count--;
+  }
+  console.log('Go!')
+}
 /**
  * Exercise 2
  *
@@ -18,8 +24,17 @@ let count = 10; // DO NOT TOUCH THIS LINE :)
  * be the same as {countdown} the only difference is
  * that it takes any number as a param and count from that point
  */
-
 // ==========================
+
+function countdownWithParam(){
+    let count = 16;
+    while (count > 0) {
+        console.log(`Remaining: ${count}`);
+        count--;
+      }
+      console.log('Go!')
+}
+
 let ruler = [];
 /**
  * Exercise 3
@@ -32,10 +47,27 @@ let ruler = [];
 
 // ==========================
 
+function rulerConstructor() {
+
+    let newRuler = 0;
+    while (newRuler<=100){
+        ruler.push(newRuler);
+        newRuler+=10;
+        
+    }
+    
+};
 /**
  * Exercise 4
  * create a function {partyPadding} which takes an array of names
  * of guests at a party. If there are less than 5 guests, add
- * "Neighbour" to the array until you have at least 5 guests.
+ * "Neighbor" to the array until you have at least 5 guests.
  * Without using an if statement!
  */
+const guests = ["Mimi", "Archibald"];
+
+ function partyPadding(guests) {
+    while (guests.length < 5){
+        guests.push("Neighbour");// pushing by itself
+    }
+ };
