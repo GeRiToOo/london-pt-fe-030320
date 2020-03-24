@@ -43,6 +43,7 @@ return newArray;
     for (let property in obj) {
         newArray.push(obj[property], );
       } 
+      
       return newArray[0]+" "+ newArray[1]+" "+newArray[2];
    
  }

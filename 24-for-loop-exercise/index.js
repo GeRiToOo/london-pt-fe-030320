@@ -51,11 +51,14 @@ function getElementIndex(number){
 const numbersForIndexes = [6, 2, 16, 23, 84, 21, 9, 3]; // DON'T TOUCH THIS LINE :)
 
 function total(){
-// re-write to "for"
-return [2, 123, 13, 1, 6, 84, 23, 12, 45].reduce((a, b) => a + b); // WRONG
-  
-}
+  let sum = numbers[0];
 
+  for(let i = 1; i < numbers.length; i++){
+          sum +=numbers[i]; 
+        }   
+        
+        return sum;
+      }
 /**
  * Exercise 4
  * Create a function {addIndex} that takes {numbersForIndexes} array,
