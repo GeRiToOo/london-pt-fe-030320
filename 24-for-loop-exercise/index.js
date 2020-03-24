@@ -77,23 +77,20 @@ function addIndex(){
 
 
 const forLowestNumber = [5, 234, 96, 34, -34, 0, 23]; // DON'T TOUCH THIS LINE :)
+
 /**
  * Exercise 5
  *  create function {lowestNumber} which will return the lowest integer
  * from {forLowestNumber}
  */
 
- function lowestNumber(smallestNumber) {
-// re-write with "for"
+ function lowestNumber() {
+    let min = forLowestNumber[0];
 
-for(let i = 0; i > forLowestNumber.length; i++){
-  
-    if (forLowestNumber[i] < smallestNumber){
-      smallestNumber = forLowestNumber[i];
-      return  smallestNumber;
-    } 
-  
-}
-  // return Math.min(...forLowestNumber);
-
- };
+      for(let i = 0; i < forLowestNumber.length; i++){
+          if (forLowestNumber[i] < min){  
+              min = forLowestNumber[i]; 
+            }   
+            }
+            return min;
+    };
