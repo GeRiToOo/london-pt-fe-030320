@@ -11,16 +11,15 @@
  * empty array.
  */
 
-
 function getIntegersOnly(array) {
-  let newArray =[];
-     for (const param of array) {
-         if(Number.isInteger(param)) {
-             newArray.push(param);
-         } 
-     }
-     return newArray;
- }
+  let newArray = [];
+  for (const param of array) {
+    if (Number.isInteger(param)) {
+      newArray.push(param);
+    }
+  }
+  return newArray;
+}
 /**
  * Exercise 2
  * create a function {getEvenNumbers}, which takes an array of integers
@@ -28,18 +27,15 @@ function getIntegersOnly(array) {
  * integers it should return an empty array
  */
 
- function getEvenNumbers(array) {
-    const newArray = [];
-     for (const param of array) {
-      if(param %2 === 0 && param!=0) {
-        newArray.push(param);
-    } 
+function getEvenNumbers(array) {
+  const newArray = [];
+  for (const param of array) {
+    if (param % 2 === 0 && param != 0) {
+      newArray.push(param);
+    }
+  }
+  return newArray;
 }
-return newArray;
- }
-
-
-
 
 /**
  * Exercise 3
@@ -50,18 +46,15 @@ return newArray;
  * should return an empty array
  */
 
- function getEvenNumbersFromMixedArray(array){
+function getEvenNumbersFromMixedArray(array) {
   const newArray = [];
-     for (const param of array) {
-
-      if(param %2 === 0 && param!=0 && Number.isInteger(param)) {
-        newArray.push(param);
-    } 
+  for (const param of array) {
+    if (param % 2 === 0 && param != 0 && Number.isInteger(param)) {
+      newArray.push(param);
+    }
+  }
+  return newArray;
 }
-return newArray;
-}
-
- 
 
 /**
  * Exercise 4
@@ -70,15 +63,14 @@ return newArray;
  * integers it should return an empty array
  */
 
-function getOddNumbers(array){
+function getOddNumbers(array) {
   const newArray = [];
-     for (const param of array) {
-
-      if(param %2 !== 0 && Number.isInteger(param)) {
-        newArray.push(param);
-    } 
-}
-return newArray;
+  for (const param of array) {
+    if (param % 2 !== 0 && Number.isInteger(param)) {
+      newArray.push(param);
+    }
+  }
+  return newArray;
 }
 
 /**
@@ -91,22 +83,16 @@ return newArray;
  * [2,1,4,3,6]
  */
 
- function evenOddTransform(array) {
-
+function evenOddTransform(array) {
   let newArray = [];
-     for (let param of array) {
-      if(param %2 !== 0 && Number.isInteger(param)) {
-        param=param+1;
-        newArray.push(param);
-       
-       }  
-       else {
-         param = param-1;
-         newArray.push(param);
-        
-            }
-      }
-      return newArray;
-    
+  for (let param of array) {
+    if (param % 2 !== 0 && Number.isInteger(param)) {
+      param = param + 1;
+      newArray.push(param);
+    } else {
+      param = param - 1;
+      newArray.push(param);
+    }
+  }
+  return newArray;
 }
-

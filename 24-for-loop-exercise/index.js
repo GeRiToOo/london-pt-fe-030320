@@ -16,10 +16,10 @@ const numbers = [2, 123, 13, 1, 6, 84, 23, 12, 45]; // DON'T TOUCH THIS LINE :)
 
 
 function greetVisitors() {
-    for (let i = 0; i < visitors.length; i++) {
-      console.log("Hi " + visitors[i] + ", my name is" + myName);
-    }
+  for (let i = 0; i < visitors.length; i++) {
+    console.log("Hi " + visitors[i] + ", my name is" + myName);
   }
+}
 
 /**
  * Exercise 2
@@ -29,14 +29,14 @@ function greetVisitors() {
  */
 
 // ========================
-function getElementIndex(number){
+function getElementIndex(number) {
   for (let index = 0; index < numbers.length; index++) {
-    if (numbers[index] === number){
+    if (numbers[index] === number) {
       return index;
-    } 
+    }
   }
 
-  return "Item not found";  
+  return "Item not found";
 }
 
 
@@ -50,15 +50,15 @@ function getElementIndex(number){
 
 const numbersForIndexes = [6, 2, 16, 23, 84, 21, 9, 3]; // DON'T TOUCH THIS LINE :)
 
-function total(){
+function total() {
   let sum = numbers[0];
 
-  for(let i = 1; i < numbers.length; i++){
-          sum +=numbers[i]; 
-        }   
-        
-        return sum;
-      }
+  for (let i = 1; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
+  return sum;
+}
 /**
  * Exercise 4
  * Create a function {addIndex} that takes {numbersForIndexes} array,
@@ -66,7 +66,7 @@ function total(){
  */
 
 
-function addIndex(){
+function addIndex() {
   let newArray = [];
 
   for (let i = 0; i < numbersForIndexes.length; i++) {
@@ -76,7 +76,7 @@ function addIndex(){
 
   return newArray;
 }
- 
+
 
 
 const forLowestNumber = [5, 234, 96, 34, -34, 0, 23]; // DON'T TOUCH THIS LINE :)
@@ -87,13 +87,13 @@ const forLowestNumber = [5, 234, 96, 34, -34, 0, 23]; // DON'T TOUCH THIS LINE :
  * from {forLowestNumber}
  */
 
- function lowestNumber() {
-    let min = forLowestNumber[0];
+function lowestNumber() {
+  let min = forLowestNumber[0];
 
-      for(let i = 0; i < forLowestNumber.length; i++){
-          if (forLowestNumber[i] < min){  
-              min = forLowestNumber[i]; 
-            }   
-            }
-            return min;
-    };
+  for (let i = 0; i < forLowestNumber.length; i++) {
+    if (forLowestNumber[i] < min) {
+      min = forLowestNumber[i];
+    }
+  }
+  return min;
+};

@@ -6,30 +6,27 @@
  */
 
 const obj = {
-    firstName: "Alex",
-    lastName: "Smith",
-    age: 25
+  firstName: "Alex",
+  lastName: "Smith",
+  age: 25
 };
- 
 
- function logProperties(){
-    for (const property in obj) {
-        console.log(`Property name: ${[property]}`);
-      }
- }
+function logProperties() {
+  for (const property in obj) {
+    console.log(`Property name: ${[property]}`);
+  }
+}
 /**
  * Exercise 2
  * Create a function {getAllValues} that takes an object
  * and returns an array of all values.
  */
 function getAllValues(obj) {
-  let  newArray = [];
-    for (let property in obj) {
-      
-        newArray.push(obj[property], );
-      
-      } 
-return newArray;
+  let newArray = [];
+  for (let property in obj) {
+    newArray.push(obj[property]);
+  }
+  return newArray;
 }
 /**
  * Exercise 3
@@ -37,16 +34,14 @@ return newArray;
  * and returns all values as one string with space separation.
  */
 
- function getAllValuesAsString() {
-   
-    let  newArray = [];
-    for (let property in obj) {
-        newArray.push(obj[property], );
-      } 
-      
-      return newArray[0]+" "+ newArray[1]+" "+newArray[2];
-   
- }
+function getAllValuesAsString() {
+  let newArray = [];
+  for (let property in obj) {
+    newArray.push(obj[property]);
+  }
+
+  return newArray[0] + " " + newArray[1] + " " + newArray[2];
+}
 /**
  * Exercise 4
  * Create a function {propertyValueString} that takes object as a param
@@ -54,9 +49,8 @@ return newArray;
  * 'PROPERTY: VALUE'
  */
 
- function propertyValueString() {
-    for (const prop in obj) {
-        console.log(`${prop}: ${obj[prop]}`);
-      }
-
- }
+function propertyValueString() {
+  for (const prop in obj) {
+    console.log(`${prop}: ${obj[prop]}`);
+  }
+}
