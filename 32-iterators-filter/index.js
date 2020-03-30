@@ -5,6 +5,9 @@
  * as a parameter and return an array but without strings
  */
 
+function noStrings(array) {
+  return array.filter(param => typeof param !== "string");
+}
 /**
  * Exercise 2
  *
@@ -12,6 +15,10 @@
  * as a parameter and return an array of strings by removing
  * every other type
  */
+
+function justStrings(array) {
+  return array.filter(param => typeof param === "string");
+}
 
 /**
  * Exercise 3
@@ -21,6 +28,10 @@
  * that are longer than 5 characters
  */
 
+function justStringsLongerThan5(array) {
+  return array.filter(param => param.length > 5);
+}
+
 /**
  * Exercise 4
  *
@@ -29,6 +40,10 @@
  * that are more than 13
  */
 
+function numbersMoreThan13(array) {
+  return array.filter(param => param > 13);
+}
+
 /**
  * Exercise 5
  *
@@ -36,6 +51,9 @@
  * an array as a parameter and return an array of objects
  */
 
+let objectsOnly = array => {
+  return array.filter(item => typeof item === `object`);
+};
 /**
  * Exercise 6
  *
@@ -43,3 +61,7 @@
  * an array as a parameter and return an array of truthy values.
  * IMPORTANT: You still need to keep number 0.
  */
+
+function truthyOnly(array) {
+  return array.filter(param => param || param === 0);
+}

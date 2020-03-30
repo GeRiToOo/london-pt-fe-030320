@@ -14,6 +14,9 @@ or if you are using HTTPS
 git pull https://github.com/CodersInHoods/london-pt-fe-030320.git master
 ```
 
+git stash - to cache your changes
+git stash pop - put your changes back
+
 ## When you want to push your code
 
 ```javascript

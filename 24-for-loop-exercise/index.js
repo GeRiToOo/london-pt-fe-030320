@@ -13,8 +13,6 @@ const visitors = ["Alex", "Mike", "Sam", "Monica", "Lily"]; // Add at least 5 na
 // ========================
 const numbers = [2, 123, 13, 1, 6, 84, 23, 12, 45]; // DON'T TOUCH THIS LINE :)
 
-
-
 function greetVisitors() {
   for (let i = 0; i < visitors.length; i++) {
     console.log("Hi " + visitors[i] + ", my name is" + myName);
@@ -38,7 +36,6 @@ function getElementIndex(number) {
 
   return "Item not found";
 }
-
 
 /**
  * Exercise 3
@@ -65,7 +62,6 @@ function total() {
  * and returns a new array which includes each number + it's index
  */
 
-
 function addIndex() {
   let newArray = [];
 
@@ -76,8 +72,6 @@ function addIndex() {
 
   return newArray;
 }
-
-
 
 const forLowestNumber = [5, 234, 96, 34, -34, 0, 23]; // DON'T TOUCH THIS LINE :)
 
@@ -96,4 +90,4 @@ function lowestNumber() {
     }
   }
   return min;
-};
+}
