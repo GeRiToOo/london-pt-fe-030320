@@ -22,7 +22,7 @@ const chalk = require("chalk");
  * to see the result
  */
 
-function renderBlueText() {
+function renderBlueText(string) {
   console.log(chalk.blue("Hello"));
 }
 
@@ -46,6 +46,7 @@ console.log(inversedColourText());
  * create a function styledText that takes array of strings
  * and style each by adding red background colour and setting
  * font colour to white.
+
  */
 
 let array = ["Hello"];

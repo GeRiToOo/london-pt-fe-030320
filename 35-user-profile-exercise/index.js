@@ -1,6 +1,8 @@
 // install and  import "readline-sync" npm package before you do exercises
+
 const readlineSync = require("readline-sync");
 const chalk = require("chalk");
+
 const user = {};
 /**
  * Exercise 1
@@ -16,6 +18,7 @@ console.log(" ");
 let firstName = readlineSync.question(chalk.green("First name: "));
 user.firstName = firstName;
 console.log(" ");
+
 /**
  * Exercise 2
  *
@@ -32,6 +35,9 @@ console.log(
   )
 );
 console.log(" ");
+
+console.log(`Hello ${user.firstName} ${user.lastName}!`);
+
 /*
  * Exercise 3
  *
@@ -46,6 +52,7 @@ user.age = userAge;
  *
  * ask user for a email and save response to {user.email}
  */
+
 console.log(" ");
 let userEmail = readlineSync.question(chalk.green("Email: "));
 user.email = userEmail;
@@ -55,6 +62,7 @@ user.email = userEmail;
  *
  * use "chalk" to print out user data with colours :)
  */
+
 console.log(" ");
 console.log(
   chalk.bgRed.white(
@@ -74,4 +82,10 @@ console.log(
   chalk.bgRed.white(
     "================= ! ! ! ! ! ! ! ! !  ======================="
   )
+);
+
+console.log(
+  `Here what we have, your full name is ${user.firstName} ${user.lastName}. 
+    You are ${user.age} and if we need to contact with you we can send 
+    a letter to ${user.email} `
 );

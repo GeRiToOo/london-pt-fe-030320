@@ -1,19 +1,24 @@
 // install and  import "readline-sync" npm package before you do exercises
+
 const readlineSync = require("readline-sync");
+
 /**
  * Exercise 1
  *
  * ask user for a name and assign a response to variable {name}
  */
 
+
 let name = readlineSync.question("What is your name? :");
+
+
 
 //===== DO NOT TOUCH THIS BLOCK =====
 console.log(`Hi ${name}!`);
-console.log("========================================");
+console.log("=====================");
 console.log(`Let me do math for you!`);
-console.log("========================================");
-console.log(" ");
+console.log("=====================");
+
 //===================================
 
 /**
@@ -26,6 +31,7 @@ console.log(" ");
  * NOTE: if the user will respond with wrong value, ask again, until
  * you get correct symbol
  */
+
 console.log("============= Step 1 ===================");
 console.log(" ");
 let symbols = ["+", "-", "*", "/"];
@@ -46,6 +52,7 @@ while (!symbols.includes(selectedSymbol)) {
  * NOTE: if the user will respond with wrong value, ask again, until
  * you get a number
  */
+
 console.log("  ");
 console.log("============= Step 2 ===================");
 console.log(" ");
@@ -59,6 +66,7 @@ while (typeof numBer1 != `number`) {
   );
 }
 
+
 /**
  * Exercise 4
  *
@@ -67,6 +75,7 @@ while (typeof numBer1 != `number`) {
  * NOTE: if the user will respond with wrong value, ask again, until
  * you get a number
  */
+
 console.log(" ");
 console.log("============= Step 3 ===================");
 console.log(" ");
@@ -78,6 +87,7 @@ while (typeof numBer2 !== "number") {
     "Your choice is not a number, please insert a number: "
   );
 }
+
 /**
  * Exercise 5
  *
@@ -86,6 +96,7 @@ while (typeof numBer2 !== "number") {
  *
  * show the result to the user
  */
+
 
 let result;
 
@@ -99,13 +110,12 @@ if ((selectedSymbol = "+")) {
   result = numBer1 / numBer2;
 }
 
-// switch
-// OR
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
+
 console.log(" ");
 console.log("============= Step 4 ===================");
-console.log(" ");
-console.log("========================================");
-console.log(" ");
+
+console.log("=====================");
 console.log(`Here you go, the result is ${result}`);
-console.log(" ");
+console.log("=====================");
+
+

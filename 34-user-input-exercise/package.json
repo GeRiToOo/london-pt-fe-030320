@@ -7,6 +7,15 @@
     "concat": "concat -o ./tests/index.test.js ./index.js ./tests/tests.js ",
     "test": "npm run concat && jest"
   },
+<<<<<<< HEAD
+=======
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "npm install && npm run test"
+    }
+  },
+>>>>>>> b377c0b4e1ad16a5828c4ad219076f0d26c9ac56
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -15,4 +24,8 @@
     "husky": "^4.2.3",
     "jest": "^25.1.0"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b377c0b4e1ad16a5828c4ad219076f0d26c9ac56
