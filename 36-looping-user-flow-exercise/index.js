@@ -50,23 +50,14 @@ const user = {};
  */
 
 mainMenu();
-function bookMenu() {
-  console.log("");
-  console.log("= = = = = = BOOK MENU = = = = = =");
-  console.log("");
-  console.log("1. My Dark Vanessa");
-  console.log("2. Uncanny Valley");
-  console.log("3. Weather");
-  console.log("4. The night watchman");
-  console.log("5. All adults here");
-  console.log("6. Dear Edward");
-  console.log("7. Grown ups");
-  console.log("8. Go Back");
-  console.log("");
-  let userInput = readlineSync.question("Chose an option: ");
-  let userBook = parseFloat(userInput);
 
-  switch (userBook) {
+function bookMenu() {
+  let index = readlineSync.keyInSelect(books, "Choose an option", {
+    cancel: "Go back"
+  });
+  let userOption = parseFloat(index) + 1;
+
+  switch (userOption) {
     case 1:
       console.log("");
       console.log("You chose My Dark Vanessa book");
@@ -112,7 +103,7 @@ function bookMenu() {
       user.book = "Grown ups";
       console.log(bookMenu());
       break;
-    case 8:
+    case 0:
       console.log("");
       console.log("Go Back");
       console.log(mainMenu());
@@ -138,22 +129,11 @@ function bookMenu() {
  */
 
 function movieMenu() {
-  console.log("");
-  console.log("= = = = = = MOVIES MENU = = = = = =");
-  console.log("");
-  console.log("1. The Invisible Man");
-  console.log("2. Never Rarely Sometimes Always");
-  console.log("3. Gretel & Hansel");
-  console.log("4. No time to die");
-  console.log("5. Bloodshot");
-  console.log("6. Onward");
-  console.log("7. Sonic");
-  console.log("8. Go Back");
-  console.log("");
-  let userInput = readlineSync.question("Chose an option: ");
-  let userMovie = parseFloat(userInput);
-
-  switch (userMovie) {
+  let indexMovie = readlineSync.keyInSelect(movies, "Choose an option", {
+    cancel: "Go back"
+  });
+  let userOptionMovie = parseFloat(indexMovie) + 1;
+  switch (userOptionMovie) {
     case 1:
       console.log("");
       console.log("You choose The Invisible Man movie");
@@ -203,7 +183,7 @@ function movieMenu() {
       console.log(movieMenu());
       break;
 
-    case 8:
+    case 0:
       console.log("");
       console.log("Go Back");
       console.log(mainMenu());
@@ -229,22 +209,12 @@ function movieMenu() {
  */
 
 function destinationMenu() {
-  console.log("");
-  console.log("= = = = = = DESTINATION MENU = = = = = =");
-  console.log("");
-  console.log("1. Italy");
-  console.log("2. France");
-  console.log("3. Germany");
-  console.log("4. Spain");
-  console.log("5. Portugal");
-  console.log("6. Denmark");
-  console.log("7. Netherland");
-  console.log("8. Go Back");
-  console.log("");
-  let userInput = readlineSync.question("Chose an option: ");
-  let userDestination = parseFloat(userInput);
+  let indexCountry = readlineSync.keyInSelect(countries, "Choose an option", {
+    cancel: "Go back"
+  });
+  let userOptionCountry = parseFloat(indexCountry) + 1;
 
-  switch (userDestination) {
+  switch (userOptionCountry) {
     case 1:
       console.log("");
       console.log("You chose Italy as a destination");
@@ -294,15 +264,14 @@ function destinationMenu() {
       console.log(destinationMenu());
       break;
 
-    case 8:
+    case 0:
       console.log("");
       console.log("Go Back");
-      console.log(mainMenu());
+      mainMenu();
       break;
 
     default:
       console.log(" = = = = = = = = ! ! ! ! ! ! ! = = = = = = = = ");
-
       console.log("Please select one of the following options:");
       bookMenu();
       break;
@@ -318,20 +287,18 @@ function destinationMenu() {
  */
 
 function mainMenu() {
-  console.log("");
-  console.log("= = = = = = MAIN MENU = = = = = =");
-  console.log("");
-  console.log("1. BOOKS");
-  console.log("2. MOVIES");
-  console.log("3. NEXT DESTINATION");
-  console.log("4. EXIT");
-  console.log("");
+  let i = 0;
+  for (let key of Object.entries(selectedItems)) {
+    i = i + 1;
+    console.log(`${i}. ${key}`);
+  }
+  console.log("4. Exit");
 
-  let userInput = readlineSync.question("Chose an option: ");
-  console.log("");
-  let userOption = parseFloat(userInput);
+  let indexMenu = readlineSync.question("Choose an option: ");
 
-  switch (userOption) {
+  let userOptionMenu = parseFloat(indexMenu);
+
+  switch (userOptionMenu) {
     case 1:
       console.log("");
       console.log(bookMenu());
@@ -345,27 +312,10 @@ function mainMenu() {
       console.log(destinationMenu());
       break;
     case 4:
-      exit();
-      function exit() {
-        let input = readlineSync.question(
-          "You choose EXIT. Are you sure? Y/N "
-        );
-        console.log("");
-        if (input.toLowerCase() === "n") {
-          console.log(mainMenu());
-        } else if (input.toLowerCase() === "y") {
-        } else {
-          console.log("");
-          console.log("Please insert valid answer!");
-          console.log(exit());
-        }
-      }
       console.log("");
       console.log(
         `Selected choices were  ${user.book} book , ${user.movie} movie and destination ${user.destination} . `
       );
-      console.log("");
-
       break;
 
     default:

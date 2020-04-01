@@ -15,8 +15,8 @@ console.log(
   )
 );
 console.log(" ");
-let firstName = readlineSync.question(chalk.green("First name: "));
-user.firstName = firstName;
+user.firstName = readlineSync.question(chalk.green("First name: "));
+
 console.log(" ");
 
 /**
@@ -25,8 +25,7 @@ console.log(" ");
  * ask user for a last name and save response to {user.lastName}
  */
 
-let lastName = readlineSync.question(chalk.green("Last name: "));
-user.lastName = lastName;
+user.lastName = readlineSync.question(chalk.green("Last name: "));
 
 console.log(" ");
 console.log(
@@ -44,8 +43,7 @@ console.log(`Hello ${user.firstName} ${user.lastName}!`);
  * ask user for a age and save response to {user.age}
  */
 
-let userAge = readlineSync.question(chalk.green("Age: "));
-user.age = userAge;
+user.age = readlineSync.questionInt(chalk.green("Age: "));
 
 /*
  * Exercise 4
@@ -54,35 +52,13 @@ user.age = userAge;
  */
 
 console.log(" ");
-let userEmail = readlineSync.question(chalk.green("Email: "));
-user.email = userEmail;
+user.email = readlineSync.questionEMail(chalk.green("Email: "));
 
 /**
  * OPTIONAL:
  *
  * use "chalk" to print out user data with colours :)
  */
-
-console.log(" ");
-console.log(
-  chalk.bgRed.white(
-    "================= ! ! ! ! ! ! ! ! !  ======================="
-  )
-);
-console.log(" ");
-console.log(
-  chalk.bold.red(
-    `Here what we have, your full name is ${user.firstName} ${user.lastName}. 
-    You are ${user.age} and if we need to contact with you we can send 
-    a letter to ${user.email} `
-  )
-);
-console.log(" ");
-console.log(
-  chalk.bgRed.white(
-    "================= ! ! ! ! ! ! ! ! !  ======================="
-  )
-);
 
 console.log(
   `Here what we have, your full name is ${user.firstName} ${user.lastName}. 

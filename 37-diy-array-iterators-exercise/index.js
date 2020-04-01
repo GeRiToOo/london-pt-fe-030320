@@ -30,9 +30,11 @@ const forEach = (array, callback) => {
 
 function map(array, callback) {
   newArray = [];
-  for (const element of array) {
-    callback(element, array.indexOf(element));
-    newArray.push(this.element);
+
+  for (let index = 0; index < array.length; index++) {
+    const value = array[index];
+
+    newArray.push(callback(value, index));
   }
   return newArray;
 }
@@ -52,9 +54,15 @@ function map(array, callback) {
  */
 
 function filter(array, callback) {
-  for (const element of array) {
-    callback(element, array.indexOf(element));
+  let newArray = [];
+  for (let index = 0; index < array.length; index++) {
+    const value = array[index];
+
+    if (Boolean(callback(value, index))) {
+      newArray.push(value);
+    }
   }
+  return newArray;
 }
 
 /**
@@ -72,8 +80,11 @@ function filter(array, callback) {
  */
 
 function find(array, callback) {
-  for (const element of array) {
-    callback(element, array.indexOf(element));
+  for (let index = 0; index < array.length; index++) {
+    const value = array[index];
+    if (Boolean(callback(value, index))) {
+      return value;
+    }
   }
 }
 
@@ -92,8 +103,11 @@ function find(array, callback) {
  */
 
 function findIndex(array, callback) {
-  for (const element of array) {
-    callback(element, array.indexOf(element));
+  for (let index = 0; index < array.length; index++) {
+    const value = array[index];
+    if (Boolean(callback(value, index))) {
+      return index;
+    }
   }
 }
 
@@ -104,7 +118,9 @@ function findIndex(array, callback) {
  *
  * The callback is invoked for every
  * element in the array and is passed
- * each element and the index. The
+ * each element and the index.
+ *
+ * The
  * function returns a boolean value
  * representing if every time the
  * callback was invoked it returned
@@ -113,8 +129,11 @@ function findIndex(array, callback) {
  */
 
 function every(array, callback) {
-  for (const element of array) {
-    callback(element, array.indexOf(element));
+  for (let index = 0; index < array.length; index++) {
+    const value = array[index];
+    if (callback(value, index)) {
+      return true;
+    }
   }
 }
 
@@ -125,7 +144,8 @@ function every(array, callback) {
  *
  * The callback is invoked for every
  * element in the array and is passed
- * each element and the index. The
+ * each element and the index.
+ *  The
  * function returns a boolean value
  * representing if _any_ time the
  * callback was invoked it returned
@@ -134,8 +154,11 @@ function every(array, callback) {
  */
 
 function some(array, callback) {
-  for (const element of array) {
-    callback(element, array.indexOf(element));
+  for (let index = 0; index < array.length; index++) {
+    const value = array[index];
+    if (Boolean(callback(value, index)) === true) {
+      return true;
+    }
   }
 }
 
@@ -152,8 +175,10 @@ function some(array, callback) {
  *
  * The callback is invoked for every
  * element in the array and is passed
- * **the current cumulative value**,
- * each element and the index. Whatever
+ * **the initialValue,
+ * each element and the index.
+ *
+ * Whatever
  * the callback returns is the new
  * cumulative value. The function
  * should return the final cumulative
@@ -163,7 +188,9 @@ function some(array, callback) {
 
 function reduce(array, callback, initialValue) {
   for (let i = 0; i < array.length; i++) {
-    let value = array[i];
-    callback(value, i, initialValue);
+    let element = array[i];
+    initialValue = initialValue + element;
+    let newCumulativeValue = callback(initialValue, element, i);
   }
+  return newCumulativeValue;
 }

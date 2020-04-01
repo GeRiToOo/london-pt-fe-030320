@@ -8,10 +8,7 @@ const readlineSync = require("readline-sync");
  * ask user for a name and assign a response to variable {name}
  */
 
-
 let name = readlineSync.question("What is your name? :");
-
-
 
 //===== DO NOT TOUCH THIS BLOCK =====
 console.log(`Hi ${name}!`);
@@ -66,7 +63,6 @@ while (typeof numBer1 != `number`) {
   );
 }
 
-
 /**
  * Exercise 4
  *
@@ -97,19 +93,22 @@ while (typeof numBer2 !== "number") {
  * show the result to the user
  */
 
-
 let result;
 
-if ((selectedSymbol = "+")) {
-  result = numBer1 + numBer2;
-} else if ((selectedSymbol = "-")) {
-  result = numBer1 - numBer2;
-} else if ((selectedSymbol = "*")) {
-  result = numBer1 * numBer2;
-} else if ((selectedSymbol = "/")) {
-  result = numBer1 / numBer2;
+switch (selectedSymbol) {
+  case "+":
+    result = Number(number1) + Number(numBer2);
+    break;
+  case "-":
+    result = number1 - numBer2;
+    break;
+  case "*":
+    result = number1 * numBer2;
+    break;
+  case "/":
+    result = number1 / numBer2;
+    break;
 }
-
 
 console.log(" ");
 console.log("============= Step 4 ===================");
@@ -117,5 +116,3 @@ console.log("============= Step 4 ===================");
 console.log("=====================");
 console.log(`Here you go, the result is ${result}`);
 console.log("=====================");
-
-
