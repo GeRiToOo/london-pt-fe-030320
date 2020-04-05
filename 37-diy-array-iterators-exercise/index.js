@@ -130,11 +130,12 @@ function findIndex(array, callback) {
 
 function every(array, callback) {
   for (let index = 0; index < array.length; index++) {
-    const value = array[index];
-    if (callback(value, index)) {
-      return true;
+    if (!callback(array[index], index)) {
+      return false;
     }
   }
+
+  return true;
 }
 
 /**
@@ -175,7 +176,7 @@ function some(array, callback) {
  *
  * The callback is invoked for every
  * element in the array and is passed
- * **the initialValue,
+ * **the cumulative value,
  * each element and the index.
  *
  * Whatever
@@ -186,11 +187,11 @@ function some(array, callback) {
  *
  */
 
-function reduce(array, callback, initialValue) {
+function reduce(array, callback, initialValue = 0) {
+  let sum = initialValue;
+
   for (let i = 0; i < array.length; i++) {
-    let element = array[i];
-    initialValue = initialValue + element;
-    let newCumulativeValue = callback(initialValue, element, i);
+    sum = callback(sum, array[i], i);
   }
-  return newCumulativeValue;
+  return sum;
 }
