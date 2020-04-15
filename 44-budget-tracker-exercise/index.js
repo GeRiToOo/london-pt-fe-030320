@@ -1,8 +1,13 @@
 const productsContainer = document.querySelector("#products");
-let remaining = document.querySelector("#remaining");
-let span = remaining.querySelector("span");
-let budget = 50;
-let newBudget;
+let remaining = document
+  .querySelector("#remaining > span")
+  .innerText.slice(1, 6);
+
+let span = document.querySelector("#remaining span");
+
+// let budget = 50;
+//   Number(remaining).toFixed(2);
+// console.log(budget);
 
 // products.js GET and SET
 myProducts = JSON.stringify(products);
@@ -27,7 +32,6 @@ for (let i = 0; i < productsObject.length; i++) {
   p.value = productsObject[i].price;
 
   const select = document.createElement("select");
-
   div.appendChild(select);
 
   // append options as many as are in quantity
@@ -35,64 +39,57 @@ for (let i = 0; i < productsObject.length; i++) {
   for (let i = 0; i <= number; i++) {
     const option = document.createElement("option");
     option.innerText = i;
-    option.value = i;
+    option.id = i;
     select.appendChild(option);
   }
   selectOption(i);
 }
 
+const objectQuantity = {
+  n0: 0,
+  n1: 0,
+  n2: 0,
+  n3: 0
+};
+console.log(objectQuantity);
 // --------- function select option ----------
 
 function selectOption(i) {
   let divProduct = document.querySelector(`#n${i}`);
   let selectProduct = divProduct.querySelector("select");
   let priceProduct = divProduct.querySelector("p");
-  let constant = productsObject[i].max_quantity;
-  console.log("constant " + constant);
+
   let price = priceProduct.value;
 
   selectProduct.addEventListener("change", event => {
     let quantity = selectProduct.value;
-    event.preventDefault();
-
-    budget = budget - price * quantity;
+    objectQuantity[`n${i}`] = quantity; //push into the object every change
+    let div1 = objectQuantity.n0 * price;
+    let div2 = objectQuantity.n1 * price;
+    let div3 = objectQuantity.n2 * price;
+    let div4 = objectQuantity.n3 * price;
+    let budget = 50;
+    let result = div1 + div2 + div3 + div4;
+    console.log(result);
+    budget = budget - result;
     budget = budget.toFixed(2);
 
     if (budget > 0) {
       span.innerHTML = `£${budget}`;
-
-      // if the budget goes under 0
     } else if (budget < 0) {
-      let number = price * quantity;
-      budget = Number(budget) + Number(number); // return what was decreased
       errorMessage();
     }
-    // console.log(budget);
   });
-  //   console.log(budget);
-  return 0;
 }
 
 // ---------- Error message function ----------
 function errorMessage() {
-  const main = document.querySelector("main");
+  const cart = document.querySelector(".container");
   const errorM = document.createElement("div");
   errorM.innerText = "Not enough money left for that!";
-  errorM.innerClass = "error";
-  main.appendChild(errorM);
+  errorM.className = "error";
+  cart.appendChild(errorM);
   setTimeout(function() {
-    main.removeChild(errorM);
+    cart.removeChild(errorM);
   }, 3000);
 }
-
-// let difference;
-// let selected = selectProduct.options[selectProduct.selectedIndex];
-
-// let backToBudget;
-
-// difference = selected - quantity;
-// console.log("selected " + selected);
-// console.log("quant " + quantity);
-// // backToBudget = difference * price;
-// console.log("difference " + difference);
-// // console.log("back " + backToBudget);
