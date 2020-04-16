@@ -20,11 +20,11 @@ addCounterEl.addEventListener("click", event => {
     timersCount++;
     timersContainerEl.appendChild(createTimerEl(timersCount));
     addCounterEl.disabled = false;
-  } else if (timersContainerEl.childElementCount === 4) {
+    timerForAll(timersCount);
+    removeButton(timersCount);
+  } else if (timersContainerEl.childElementCount == 4) {
     addCounterEl.disabled = true;
   }
-  timerForAll(timersCount);
-  removeButton(timersCount);
 });
 
 function createTimerEl(timersCount) {
