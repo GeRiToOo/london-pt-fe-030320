@@ -13,32 +13,58 @@ describe("1. Products rendered", () => {
   });
 
   test("each product div contains an img tag", () => {
+<<<<<<< HEAD
     productDivs.forEach(productDiv => {
+=======
+    expect(productDivs.length).toBeGreaterThan(0);
+    productDivs.forEach((productDiv) => {
+>>>>>>> 6591ab40e5a606e0ddb0dd620bd6556d81ff4777
       expect(Boolean(productDiv.querySelector("img"))).toBe(true);
     });
   });
 
   test("each product div contains an h3 tag", () => {
+<<<<<<< HEAD
     productDivs.forEach(productDiv => {
+=======
+    expect(productDivs.length).toBeGreaterThan(0);
+    productDivs.forEach((productDiv) => {
+>>>>>>> 6591ab40e5a606e0ddb0dd620bd6556d81ff4777
       expect(Boolean(productDiv.querySelector("h3"))).toBe(true);
     });
   });
 
   test("each product div contains an p tag", () => {
+<<<<<<< HEAD
     productDivs.forEach(productDiv => {
+=======
+    expect(productDivs.length).toBeGreaterThan(0);
+    productDivs.forEach((productDiv) => {
+>>>>>>> 6591ab40e5a606e0ddb0dd620bd6556d81ff4777
       expect(Boolean(productDiv.querySelector("p"))).toBe(true);
     });
   });
 
   test("each product div contains a select tag", () => {
+<<<<<<< HEAD
     productDivs.forEach(productDiv => {
+=======
+    expect(productDivs.length).toBeGreaterThan(0);
+    productDivs.forEach((productDiv) => {
+>>>>>>> 6591ab40e5a606e0ddb0dd620bd6556d81ff4777
       expect(Boolean(productDiv.querySelector("select"))).toBe(true);
     });
   });
 
   test("each product div contains elements in the correct order", () => {
+<<<<<<< HEAD
     productDivs.forEach(productDiv => {
       expect([...productDiv.children].map(el => el.tagName)).toEqual([
+=======
+    expect(productDivs.length).toBeGreaterThan(0);
+    productDivs.forEach((productDiv) => {
+      expect([...productDiv.children].map((el) => el.tagName)).toEqual([
+>>>>>>> 6591ab40e5a606e0ddb0dd620bd6556d81ff4777
         "IMG",
         "H3",
         "P",
@@ -71,9 +97,12 @@ describe("3. Budget updates", () => {
     fireEvent.input(firstDiv.querySelector("select"), {
       target: { value: "1" }
     });
+    fireEvent.change(firstDiv.querySelector("select"), {
+      target: { value: "1" },
+    });
 
     expect(remainingBudgetSpan.innerHTML).toBe(
-      `£${budget - firstProduct.price}`
+      "£37.01"
     );
   });
 });
@@ -87,8 +116,16 @@ describe("4. Budget limit", () => {
       fireEvent.input(productDiv.querySelector("select"), {
         target: { value: "0" }
       });
+<<<<<<< HEAD
     });
   });
+=======
+      fireEvent.change(productDiv.querySelector("select"), {
+        target: { value: "0" },
+      });
+    })
+  })
+>>>>>>> 6591ab40e5a606e0ddb0dd620bd6556d81ff4777
 
   test("selecting products over budget doesn't allow selection", async () => {
     fireEvent.input(firstDiv.querySelector("select"), {
@@ -97,10 +134,14 @@ describe("4. Budget limit", () => {
     fireEvent.input(secondDiv.querySelector("select"), {
       target: { value: "4" }
     });
+    fireEvent.change(firstDiv.querySelector("select"), {
+      target: { value: "3" },
+    });
+    fireEvent.change(secondDiv.querySelector("select"), {
+      target: { value: "4" },
+    });
 
-    expect(remainingBudgetSpan.innerHTML).toBe(
-      `£${(budget - firstProduct.price * 3).toFixed(2)}`
-    );
+    expect(remainingBudgetSpan.innerHTML).toBe("£11.03");
   });
 
   test("selecting products over budget displays error message for 3 seconds", async () => {
@@ -109,6 +150,12 @@ describe("4. Budget limit", () => {
     });
     fireEvent.input(secondDiv.querySelector("select"), {
       target: { value: "4" }
+    });
+    fireEvent.change(firstDiv.querySelector("select"), {
+      target: { value: "3" },
+    });
+    fireEvent.change(secondDiv.querySelector("select"), {
+      target: { value: "4" },
     });
 
     expect(Boolean(document.querySelector(".error"))).toBe(true);
