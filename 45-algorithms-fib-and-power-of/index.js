@@ -42,4 +42,3 @@ function isPowerOf(number, primeNumber) {
     return false;
   }
 }
-isPowerOf(27, 3);
