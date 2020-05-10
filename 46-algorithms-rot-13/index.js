@@ -27,12 +27,10 @@ function decryptRot13(string) {
 
 encrypt.addEventListener("click", event => {
   let textResult = rot13(text.value);
-
   result.innerHTML = textResult;
 });
 
 decrypt.addEventListener("click", event => {
   let textResult = decryptRot13(text.value);
-
   result.innerHTML = textResult;
 });

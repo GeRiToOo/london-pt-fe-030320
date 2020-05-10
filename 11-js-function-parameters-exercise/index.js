@@ -6,9 +6,8 @@
  */
 
 function myName(YOUR_NAME) {
-
-    console.log("My name is " + YOUR_NAME);
-    return YOUR_NAME;
+  console.log("My name is " + YOUR_NAME);
+  return YOUR_NAME;
 }
 
 /**
@@ -18,9 +17,8 @@ function myName(YOUR_NAME) {
  * of your age and console.log "I'm YOUR_AGE years old"
  */
 function myAge(YOUR_AGE) {
-console.log("I'm "+ YOUR_AGE + " years old");
-return YOUR_AGE;
-
+  console.log("I'm " + YOUR_AGE + " years old");
+  return YOUR_AGE;
 }
 
 /**
@@ -31,10 +29,9 @@ return YOUR_AGE;
  * "I'm from YOUR_CITY, YOUR_COUNTRY"
  */
 
- function aboutMe(YOUR_CITY, YOUR_COUNTRY) {
-
-    console.log("I'm from " + YOUR_CITY +", "+ YOUR_COUNTRY);
- }
+function aboutMe(YOUR_CITY, YOUR_COUNTRY) {
+  console.log("I'm from " + YOUR_CITY + ", " + YOUR_COUNTRY);
+}
 
 /**
  * Exercise 4
@@ -42,9 +39,6 @@ return YOUR_AGE;
  * as params and log sum.
  */
 
- function logSum(a, b) {
-
-console.log(a+b);
-
-
- }
+function logSum(a, b) {
+  console.log(a + b);
+}
