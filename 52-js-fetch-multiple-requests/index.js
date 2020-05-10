@@ -34,9 +34,16 @@ const test = async () => {
 
 const renderMembers = (promiseMembers) => {
   promiseMembers.forEach((member) => {
+    let check = /\d+/g;
+    let born = member.born.match(check);
+    born = parseInt(born);
+
+    let died = member.died.match(check);
+    died = parseInt(died);
+
     let li = `<li>
     <p class="name">${member.name || ``}</p>
-    <p class="life">1777 – 1888</p>
+    <p class="life">${born || `N/A`} -  ${died || `N/A`}</p>
     <p class="gender"><strong>Gender: </strong>${member.gender || ``}</p>
     <p class="culture"><strong>Culture: </strong>${member.culture || ``} </p>
 </li>`;
