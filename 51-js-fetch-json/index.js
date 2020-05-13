@@ -1,4 +1,4 @@
-const URL = "https://cat-fact.herokuapp.com";
+const URL = "https://cat-fact.herokuapp.com/facts";
 
 const button = document.querySelector("button");
 const result = document.querySelector(".result");
@@ -23,27 +23,30 @@ const fetchData = async (url) => {
   return await fetch(url).then((response) => response.json());
 };
 
-const test = async () => {
-  const catsData = await fetchData(`${URL}/facts`);
-
+const threeRandom = async () => {
+  const catsData = await fetchData(`${URL}`).then((response) => {
+    return response.all;
+  });
+  //It is Array catsData
+  console.log(Array.isArray(catsData));
   for (let i = 0; i < 3; i++) {
-    let number = Math.floor(Math.random() * Math.floor(catsData.all.length));
+    let number = Math.floor(Math.random() * Math.floor(catsData.length));
     let li = document.createElement("li");
     result.appendChild(li);
     let pText = document.createElement("p");
     pText.className = "fact";
-    pText.innerText = catsData.all[number].text;
+    pText.innerText = catsData[number].text;
     li.appendChild(pText);
     let pName = document.createElement("p");
     pName.className = "author";
-    pName.innerText = `${catsData.all[number].user.name.first} ${catsData.all[number].user.name.last}`;
+    pName.innerText = `${catsData[number].user.name.first} ${catsData[number].user.name.last}`;
     li.appendChild(pName);
   }
 };
 
 button.addEventListener("click", () => {
   result.innerHTML = "";
-  test();
+  threeRandom();
 });
 
 /**

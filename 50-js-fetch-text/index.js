@@ -17,11 +17,15 @@ const input = document.querySelector("input");
  * When you receive a response, render the
  * string in {.result} element
  */
-
+const button = document.querySelector("button");
 form.addEventListener("submit", (e) => {
-  let url = input.value;
-  result.innerHTML = "";
-  getResponse(url);
+  if (input.value === ``) {
+    button.disabled = true;
+  } else {
+    result.innerHTML = "";
+    getResponse(input.value);
+  }
+  button.disabled = false;
 });
 input.addEventListener(`focus`, (event) => {
   result.innerHTML = "";

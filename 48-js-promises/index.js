@@ -69,6 +69,9 @@ const asyncCookMeal = async (ingredientsToCook) => {
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve(object);
+      console.log(object);
     }, totalTime);
   });
 };
+
+asyncCookMeal(ingredients);

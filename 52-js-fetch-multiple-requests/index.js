@@ -20,15 +20,12 @@ const fetchData = async (url) => {
   return await fetch(url).then((response) => response.json());
 };
 
-const test = async () => {
+const fetchMembers = async () => {
   const objectMembers = await fetchData(houseURL);
-
   const mappedMember = objectMembers.swornMembers.map(
     async (memberUrl) => await fetchData(memberUrl)
   );
-
   members = await Promise.all(mappedMember);
-
   return members;
 };
 
@@ -52,17 +49,15 @@ const renderMembers = (promiseMembers) => {
 };
 
 const listingMembers = async () => {
-  members = await test();
-
+  members = await fetchMembers();
   renderMembers(members);
 };
 
 searchEl.addEventListener("keyup", async (e) => {
-  members = await test();
-  const val = e.target.value.toUpperCase();
+  members = await fetchMembers();
 
   const filterMembers = members.filter((word) =>
-    word.name.toUpperCase().match(val)
+    word.name.toUpperCase().match(searchEl.value.toUpperCase())
   );
   resultEl.innerHTML = " ";
   renderMembers(filterMembers);
