@@ -4,6 +4,7 @@ const {
 
 // Exercise 1
 describe("fetchData", () => {
+<<<<<<< HEAD
   test("should call fetch", () => {
     const prom = {
       then: jest.fn(() => Promise.resolve({ all: [] })),
@@ -12,6 +13,16 @@ describe("fetchData", () => {
     fetchData();
     expect(prom.then).toHaveBeenCalled();
   });
+=======
+	test("should call fetch", () => {
+		const prom = {
+			then: jest.fn(() => (Promise.resolve({all: []})))
+		}
+		fetch = () => prom
+		fetchData();
+		expect(prom.then).toHaveBeenCalled();
+	});
+>>>>>>> ddc5ae784dc06efad727ced063340623c271566a
 
   test("should return an array", async () => {
     fetch = () =>

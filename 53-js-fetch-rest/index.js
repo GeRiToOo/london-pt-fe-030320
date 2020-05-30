@@ -13,7 +13,7 @@ const baseURL = "http://localhost:3000";
 /**
  * Exercise 1
  *
- * create an async function {getComments}, which takes {url} as an argument,
+ * create an async function {getComments}, which
  * gets data from URL and returns the data as JS objects
  *
  * Note: test this function with an URL from your json-server API
@@ -48,12 +48,14 @@ const postComment = async (newComment) => {
   })
     .then((response) => {
       if (response.ok) {
-        return "Posted!";
+        return newComment.body;
       } else {
-        return "Oops we couldn't update that!";
+        throw "Oops something went wrong";
       }
     })
-    .catch((error = console.log(error)));
+    .catch((error) => {
+      console.log("Ooops", error);
+    });
 };
 
 /**
@@ -78,7 +80,7 @@ const patchComment = (commentId, newCommentBody) =>
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify(newCommentBody)
+    body: JSON.stringify(...comment, newCommentBody)
       .then((response) => {
         if (response.ok) {
           return "Updated!";
@@ -86,7 +88,9 @@ const patchComment = (commentId, newCommentBody) =>
           return "Oops we couldn't update that!";
         }
       })
-      .catch((error = console.log(error))),
+      .catch((error) => {
+        console.log("Ooops", error);
+      }),
   });
 
 /**
@@ -102,30 +106,28 @@ const patchComment = (commentId, newCommentBody) =>
  */
 
 const putComment = (commentId, newComment) =>
-  fetch(`http://localhost:3000/comments/${comment}`, {
+  fetch(`http://localhost:3000/comments/${commentId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify(newComment)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          return "Oops we couldn't update that!";
-        }
-      })
-      .catch((error = console.log(error))),
+    body: JSON.stringify(newComment).then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        return "Oops we couldn't update that!";
+      }
+    }),
   });
 
 /**
  * Exercise 5
  *
- * create an async function {deleteComment}, which takes {url} as an argument,
- * and delete selected comment from DB.
+ * create an async function {deleteComment}, which takes {comment} as an argument,
+ * and deletes the selected comment from DB.
  * This function should return "Deleted!" if successful,
- * or "That could not be deleted!" in not.
+ * or "That could not be deleted!" if not.
  *
  * Don't forget to handle errors.
  */
@@ -142,6 +144,6 @@ const deleteComment = (selectedComment) => {
       }
     })
     .catch((error) => {
-      console.log(error);
+      console.log("Ooops", error);
     });
 };
