@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 
 const APP_TITLE = "Awesome Pet Shop";
+let time = new Date().toLocaleDateString();
 
 /**
  * Exercise: 1
@@ -17,7 +18,17 @@ const APP_TITLE = "Awesome Pet Shop";
 const App = () => {
   const animals = ["cat", "dog", "giraffe", "pig", "lion", "rabbit"];
 
-  return <div className="app"></div>;
+  return (
+    <div className="app">
+      <h1>{APP_TITLE}</h1>
+      <p>{time}</p>
+      <ul>
+        {animals.map((animal) => (
+          <li key={animal}>{animal}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default App;
