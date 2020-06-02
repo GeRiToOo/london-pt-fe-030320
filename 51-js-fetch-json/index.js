@@ -19,7 +19,6 @@ const input = document.querySelector("input");
  * When you get a response, return an array of facts.
  */
 
-<<<<<<< HEAD
 const fetchData = async (url) => {
   return await fetch(url).then((response) => response.json());
 };
@@ -50,8 +49,6 @@ button.addEventListener("click", () => {
   threeRandom();
 });
 
-=======
->>>>>>> ddc5ae784dc06efad727ced063340623c271566a
 /**
  * Description of the application:
  *

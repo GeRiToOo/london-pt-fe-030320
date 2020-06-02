@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+.userForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    /* justify-content: space-between; */
+    width: 220px;
+    height: 270px;
+    margin: 0 auto;
+    background-color: cornflowerblue;
+    -webkit-box-shadow: 5px 10px 10px 10px #777;
+    -moz-box-shadow: 5px 10px 10px 10px #777;
+    box-shadow: 0px 5px 4px -1px #777;
+    border-radius: 1.5px;
+}
+
+.userForm p {
+    margin: 0px 30px;
+    font-size: 0.8em;
+}
+
+.userForm label {
+    margin: 5px;
+}
+
+.userForm input {
+    margin: 3px auto;
+    font-size: 0.7em;
+    background-color: rgb(199, 211, 235);
+    border: none;
+    height: 20px;
+    border-radius: 2px;
+}
+
+.userForm select {
+    margin: 3px auto;
+    width: 150px;
+    font-size: 0.7em;
+    background-color: rgb(199, 211, 235);
+    border: none;
+    height: 20px;
+    border-radius: 2px;
+}
+
+.userForm select:focus {
+    outline: 0;
+}
+
+
+.userForm button {
+    margin: 15px auto;
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    -webkit-box-shadow: 5px 10px 10px 10px #777;
+    -moz-box-shadow: 5px 10px 10px 10px #777;
+    box-shadow: 0px 5px 4px -1px #777;
+
+}
+
+.userForm button:focus {
+    outline: 0;
+}
