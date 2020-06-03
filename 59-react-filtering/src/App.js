@@ -36,7 +36,7 @@ const App = () => {
 
   const fetchContacts = async (event) => {
     const contactsFetched = await fetch(
-      "http://localhost:3001/contacts"
+      "http://localhost:3000/contacts"
     ).then((response) => response.json());
 
     setContacts([...contacts, ...contactsFetched]);
@@ -44,7 +44,6 @@ const App = () => {
 
   if (contacts.length === 0) {
     fetchContacts();
-    console.log("fetched");
   }
 
   return (

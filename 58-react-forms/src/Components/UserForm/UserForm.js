@@ -27,25 +27,27 @@ const UserForm = () => {
   });
 
   const postUser = async (user) => {
-    await fetch("http://localhost:3001/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log("OK");
-          return response;
-        } else {
-          console.log("Oops something went wrong");
-        }
+    if (user.firstName && user.lastName && user.genders) {
+      await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(user),
       })
-      .catch((error) => {
-        console.log("Ooops", error);
-      });
+        .then((response) => {
+          if (response.ok) {
+            console.log("OK");
+            return response;
+          } else {
+            console.log("Oops something went wrong");
+          }
+        })
+        .catch((error) => {
+          console.log("Ooops", error);
+        });
+    }
   };
 
   const userAdd = (event) => {

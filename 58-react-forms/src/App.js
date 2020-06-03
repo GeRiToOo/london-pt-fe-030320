@@ -45,12 +45,14 @@ const App = () => {
           <input
             className="first"
             onChange={(e) => setInputText(e.target.value)}
+            value={inputText}
           ></input>
         </label>
         <label htmlFor="">
           Second input:
           <input
             className="second"
+            value={inputText}
             onChange={(e) => setInputText(e.target.value)}
           ></input>
         </label>
