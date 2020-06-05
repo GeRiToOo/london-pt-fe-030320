@@ -24,13 +24,12 @@ function App() {
     const user = await fetch("https://randomuser.me/api/").then((response) =>
       response.json()
     );
-    // read about spread operator JS
+
     setUsers([...users, ...user.results]);
   };
 
   const clickAndDeleteUser = (index) => {
     setUsers(users.filter((user, i) => i !== index));
-    console.log(users);
   };
 
   return (

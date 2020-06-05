@@ -1,0 +1,98 @@
+body {
+  background-color: rgba(194, 194, 223, 0.605);
+}
+.app {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+
+  ul {
+    padding: 0;
+    list-style: none;
+    // background-color: indigo;
+
+    li {
+      margin: 10px;
+      padding: 10px;
+      width: 200px;
+      height: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(123, 123, 179, 0.729);
+      border-radius: 3px;
+      font-family: Source Sans Pro;
+      color: rgb(252, 252, 252);
+
+      .buttons {
+        width: 130px;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          cursor: pointer;
+          border: none;
+          padding: 5px;
+          border-radius: 5px;
+        }
+        button:hover {
+          transform: scale(1.1, 1.1);
+        }
+        button {
+          outline: 0;
+        }
+
+        .teamOne {
+          font-family: Source Sans Pro;
+          color: rgb(160, 82, 4);
+          background-color: rgb(247, 208, 13);
+        }
+        .teamTwo {
+          font-family: Source Sans Pro;
+          color: rgb(240, 240, 240);
+          background-color: rgb(245, 32, 32);
+        }
+      }
+    }
+  }
+  .team {
+    display: flex;
+    justify-content: space-between;
+
+    .ulTeamOne {
+      min-height: 300px;
+      border-radius: 5px;
+      background-color: rgba(247, 208, 13, 0.879);
+      display: flex;
+      flex-direction: column;
+
+      li {
+        margin: 10px;
+        padding: 10px;
+        width: 200px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(191, 106, 21, 0.571);
+        border-radius: 3px;
+        font-family: Source Sans Pro;
+        color: rgb(252, 252, 252);
+      }
+    }
+    .ulTeamTwo {
+      margin-left: 10px;
+      min-height: 300px;
+      background-color: rgba(245, 32, 32, 0.845);
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px;
+      li {
+        background-color: rgba(240, 240, 240, 0.434);
+      }
+    }
+  }
+}
