@@ -1,0 +1,213 @@
+.app {
+  max-width: 50em;
+  margin: 20px auto;
+  padding: 1em;
+  border-radius: 30px;
+  background: rgb(240, 221, 7);
+  -webkit-box-shadow: 2px 2px 2px 2px #777;
+  -moz-box-shadow: 2px 0px 0px 0px #777;
+  box-shadow: 3px 2px 2px -4px #777;
+
+  .store {
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-family: Pacifico;
+        font-size: 2em;
+        color: rgb(73, 147, 0);
+      }
+      img {
+        width: 70px;
+        height: 110px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      li {
+        width: 300px;
+        height: 140px;
+        background-color: rgb(84, 169, 0);
+        color: white;
+        margin: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 2px 2px 2px 2px #777;
+        -moz-box-shadow: 2px 0px 0px 0px #777;
+        box-shadow: 0px 2px 2px -1px #777;
+
+        .details {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          h2 {
+            margin: 0;
+          }
+
+          h3 {
+            color: rgb(208, 255, 113);
+          }
+        }
+
+        .add {
+          margin-top: 20px;
+          display: flex;
+          //   flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          width: 100%;
+          //   height: 50px;
+
+          input {
+            width: 40%;
+            height: 20px;
+            border-radius: 3px;
+            border: none;
+            background-color: rgb(234, 249, 202);
+            &.focus {
+              outline: 0;
+            }
+          }
+
+          img {
+            width: 43px;
+            height: 40px;
+            cursor: pointer;
+          }
+        }
+
+        .sold {
+          margin: 0;
+          padding-left: 25px;
+          font-size: 0.6em;
+          color: rgb(129, 0, 0);
+          font-weight: 800;
+        }
+        p {
+          margin: 0;
+          padding-left: 25px;
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+  .cart {
+    background-color: rgb(84, 169, 0);
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    min-height: 300px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 15px;
+    h2 {
+      font-family: Pacifico;
+      font-weight: 300;
+      font-size: 2em;
+      color: rgb(240, 221, 7);
+    }
+    ul {
+      list-style: none;
+      min-width: 500px;
+      .titles {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        color: white;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 40px;
+        margin: 0;
+        border-bottom: rgb(240, 221, 7) solid 1px;
+
+        .itemInfo {
+          display: flex;
+          justify-content: space-between;
+          width: 70%;
+          font-size: 0.8em;
+
+          &:hover {
+            h3 {
+              transform: scale(1.1, 1.1);
+            }
+            p {
+              transform: scale(1.1, 1.1);
+            }
+          }
+
+          input[type="number"] {
+            display: flex;
+            align-self: center;
+            width: 35px;
+            height: 20px;
+            border-radius: 3px;
+            border: none;
+            background-color: rgb(234, 249, 202);
+            &.focus {
+              outline: 0;
+            }
+          }
+          h3 {
+            padding-left: 5px;
+            color: white;
+          }
+          p {
+            align-self: center;
+            text-align: end;
+            margin: 0;
+            color: white;
+          }
+        }
+        .buttons {
+          display: flex;
+          width: 20%;
+          justify-content: space-around;
+          margin: 20px;
+
+          .delete {
+            background-color: rgb(239, 64, 64);
+            color: white;
+            border-radius: 5px;
+            border: none;
+          }
+          .update {
+            background-color: rgb(240, 221, 7);
+            color: rgb(84, 169, 0);
+            border-radius: 5px;
+            border: none;
+          }
+          button {
+            width: 65px;
+            height: 20px;
+            font-weight: 900;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .total {
+      margin: 20px;
+      display: flex;
+      width: 100%;
+      height: 50px;
+      justify-content: flex-end;
+      align-items: flex-end;
+      align-self: flex-end;
+      color: rgb(240, 221, 7);
+      font-weight: 900;
+    }
+  }
+}

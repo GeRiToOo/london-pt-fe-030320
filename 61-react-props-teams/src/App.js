@@ -38,7 +38,6 @@ const App = () => {
     "Mat",
   ]);
 
-  // const [teams, setTeams] = useState({ teamOne: "", teamTwo: "" });
   const [teamOne, setTeamOne] = useState([]);
   const [teamTwo, setTeamTwo] = useState([]);
 
@@ -48,12 +47,11 @@ const App = () => {
   };
 
   const handleClickTeamTwo = (index) => {
+    console.log(players[index]);
+
     setTeamTwo([...teamTwo, players[index]]);
     setPlayers(players.filter((player, i) => i !== index));
   };
-
-  // console.log(teamOne);
-  // console.log(teamTwo);
 
   return (
     <div className="app">
@@ -80,8 +78,8 @@ const App = () => {
           </li>
         ))}
       </ul>
-      <Team team={teamOne} class={"ulTeamOne"} />
-      <Team team={teamTwo} class={"ulTeamTwo"} />
+      <Team players={teamOne} class={"ulTeamOne"} />
+      <Team players={teamTwo} class={"ulTeamTwo"} />
     </div>
   );
 };

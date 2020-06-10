@@ -6,7 +6,7 @@ const Team = (props) => {
   return (
     <div className="team">
       <ul className={`ulTeam ${props.class}`}>
-        {props.team.map((player) => (
+        {props.players.map((player) => (
           <Player key={player} player={player} />
         ))}
       </ul>
